@@ -46,7 +46,7 @@ print("passou: (4, 2, 3) -> 'escaleno" if automated_tester(4, 2, 3, 'escaleno', 
 print("passou: (4, 4, 2) -> 'isosceles'" if automated_tester(4, 4, 2, 'isosceles', tipoTriangulo3) else "falhou: (4, 4, 2) -> esperado: 'isosceles'")
 print("passou: (1, 1, 1) -> 'equilatero'" if automated_tester(1, 1, 1, 'equilatero', tipoTriangulo3) else "falhou: (1, 1, 1) -> esperado: 'equilatero'")
 print("passou: (0, 1, 1) -> 'invalido'" if automated_tester(0, 1, 1, 'invalido', tipoTriangulo3) else "falhou: (0, 1, 1) -> esperado: 'invalido'")
-print("passou: (1, -1, 3) -> invalido" if automated_tester(1, -1, 3, 'invalido', tipoTriangulo3) else "falhou: (1, -1, 3) -> esperado: 'invalido'")
+print("passou: (1, -1, 3) -> 'invalido'" if automated_tester(1, -1, 3, 'invalido', tipoTriangulo3) else "falhou: (1, -1, 3) -> esperado: 'invalido'")
 print("passou: (1, 2, 'três') -> 'invalido'" if automated_tester(1, 2, "três", 'invalido', tipoTriangulo3) else "falhou: (1, 2, 'três') -> esperado: 'invalido'")
 print("passou: (2, 1, 1) -> 'invalido'" if automated_tester(2, 1, 1, 'invalido', tipoTriangulo3) else "falhou: (2, 1, 1) -> esperado: 'invalido'")
 
