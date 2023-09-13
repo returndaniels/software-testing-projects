@@ -43,7 +43,8 @@ def test_tipoTriangulo8_invalido():
     assert tipoTriangulo8(1, -1, 3) == "invalido"
 
 def test_tipoTriangulo8_invalido():
-    assert tipoTriangulo8(1, 2, "três") == "invalido"
+    with raises(TypeError):
+        tipoTriangulo8(1, 2, "três") == "invalido"
 
 def test_tipoTriangulo8_invalido():
     assert tipoTriangulo8(2, 1, 1) == "invalido"
