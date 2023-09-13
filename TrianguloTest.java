@@ -3,66 +3,54 @@ import org.junit.jupiter.api.Test;
 
 public class TrianguloTest {
 
-    public String tipoTriangulo8(int a, int b, int c) {
-        int[] lados = {a, b, c};
-
-        boolean valido = false;
-
-        for (int lado : lados) {
-            int[] aux = {a, b, c};
-            aux[lado] = aux[2];
-
-            if (lado > Math.abs(aux[0] - aux[1]) && lado < aux[0] + aux[1]) {
-                valido = true;
-                break;
-            }
-        }
-
-        if (!valido || a <= 0 || b <= 0 || c <= 0) {
+    static String tipotriangulo4(int a, int b, int c){
+        if (a <= 0 && b <= 0 && c <= 0){
             return "invalido";
         }
-
-        if (a == b && b == c) {
-            return "equilatero";
+        if(a+b > c || a+c > b || b+c > a){
+            if(a==b && b==c){
+                return "equilatero";
+            }
+            if(a==b || a==c || b==c){
+                return "isoceles";
+            }
+            return "escaleno";
         }
-        if (a == b || b == c || a == c) {
-            return "isosceles";
-        }
-        return "escaleno";
+        return "invalido";
     }
 
     @Test
-    public void testTipoTriangulo8Escaleno() {
-        assertEquals("escaleno", tipoTriangulo8(4, 2, 3));
+    public void testTipoTriangulo4Escaleno() {
+        assertEquals("escaleno", tipotriangulo4(4, 2, 3));
     }
 
     @Test
-    public void testTipoTriangulo8Isosceles() {
-        assertEquals("isosceles", tipoTriangulo8(4, 4, 2));
+    public void testTipoTriangulo4Isosceles() {
+        assertEquals("isosceles", tipotriangulo4(4, 4, 2));
     }
 
     @Test
-    public void testTipoTriangulo8Equilatero() {
-        assertEquals("equilatero", tipoTriangulo8(1, 1, 1));
+    public void testTipoTriangulo4Equilatero() {
+        assertEquals("equilatero", tipotriangulo4(1, 1, 1));
     }
 
     @Test
-    public void testTipoTriangulo8Invalido1() {
-        assertEquals("invalido", tipoTriangulo8(0, 1, 1));
+    public void testTipoTriangulo4Invalido1() {
+        assertEquals("invalido", tipotriangulo4(0, 1, 1));
     }
 
     @Test
-    public void testTipoTriangulo8Invalido2() {
-        assertEquals("invalido", tipoTriangulo8(1, -1, 3));
+    public void testTipoTriangulo4Invalido2() {
+        assertEquals("invalido", tipotriangulo4(1, -1, 3));
     }
 
     @Test
-    public void testTipoTriangulo8Invalido3() {
-        assertEquals("invalido", tipoTriangulo8(1, 2, "três"));
+    public void testTipoTriangulo4Invalido3() {
+        assertEquals("invalido", tipotriangulo4(1, 2, "três"));
     }
 
     @Test
-    public void testTipoTriangulo8Invalido4() {
-        assertEquals("invalido", tipoTriangulo8(2, 1, 1));
+    public void testTipoTriangulo4Invalido4() {
+        assertEquals("invalido", tipotriangulo4(2, 1, 1));
     }
 }
