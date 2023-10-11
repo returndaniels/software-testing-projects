@@ -27,23 +27,24 @@ def tipoTriangulo8(a,b,c):
 
 
 # Testes para a função tipoTriangulo8
-def test_tipoTriangulo8_escaleno():
+def test_tipoTriangulo8_escaleno1():
     assert tipoTriangulo8(4, 2, 3) == "escaleno"
 
-def test_tipoTriangulo8_isosceles():
+def test_tipoTriangulo8_isosceles2():
     assert tipoTriangulo8(4, 4, 2) == "isosceles"
 
-def test_tipoTriangulo8_equilatero():
+def test_tipoTriangulo8_equilatero3():
     assert tipoTriangulo8(1, 1, 1) == "equilatero"
 
-def test_tipoTriangulo8_invalido():
+def test_tipoTriangulo8_invalido4():
     assert tipoTriangulo8(0, 1, 1) == "invalido"
 
-def test_tipoTriangulo8_invalido():
+def test_tipoTriangulo8_invalido5():
     assert tipoTriangulo8(1, -1, 3) == "invalido"
 
-def test_tipoTriangulo8_invalido():
-    assert tipoTriangulo8(1, 2, "três") == "invalido"
+def test_tipoTriangulo8_invalido6():
+    with raises(TypeError):
+        tipoTriangulo8(1, 2, "três") == "invalido"
 
-def test_tipoTriangulo8_invalido():
+def test_tipoTriangulo8_invalido7():
     assert tipoTriangulo8(2, 1, 1) == "invalido"
